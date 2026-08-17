@@ -980,3 +980,19 @@ h3,
   .home-essence { grid-template-columns: 1fr; gap: 46px; padding-block: 80px; }
   .home-essence-image { width: min(100%, 430px); }
 }
+
+/* Marcas oficiais Kuarasy */
+.brand-logo { display: block; width: auto; }
+.brand-logo img { display: block; width: 100%; height: auto; }
+.brand-logo--header { width: 205px; }
+.brand-logo--footer { width: 280px; max-width: 100%; }
+.site-header.is-menu-open .brand-logo--header img { filter: brightness(0) invert(1); }
+
+@media (max-width: 1200px) {
+  .brand-logo--header { width: 175px; }
+}
+
+@media (max-width: 767px) {
+  .brand-logo--header { width: 155px; }
+  .brand-logo--footer { width: 235px; }
+}

@@ -12,7 +12,7 @@
     const overlay = headerRoot.dataset.overlay === "true";
     headerRoot.outerHTML = `
       <header class="site-header ${overlay ? "site-header--overlay" : "site-header--solid"}">
-        <a class="wordmark" href="/" aria-label="Pousada Kuarasy - início"><small>Pousada</small><strong>Kuarasy</strong></a>
+        <a class="wordmark brand-logo brand-logo--header" href="/" aria-label="Pousada Kuarasy - início"><img src="/assets/media/logo-kuarasy-verde.png" alt="Pousada Kuarasy"></a>
         <nav class="desktop-nav" aria-label="Navegação principal">
           ${links.map(([href, label]) => `<a href="${href}"${location.pathname.startsWith(href) ? ' class="is-active"' : ""}>${label}</a>`).join("")}
         </nav>
@@ -34,7 +34,7 @@
     footerRoot.outerHTML = `
       <footer class="footer">
         <div class="footer-top">
-          <div><a class="wordmark footer-wordmark" href="/"><small>Pousada</small><strong>Kuarasy</strong></a><p>Um refúgio à beira-mar na Praia do Boqueirão, em Japaratinga.</p></div>
+          <div><a class="wordmark footer-wordmark brand-logo brand-logo--footer" href="/" aria-label="Pousada Kuarasy - início"><img src="/assets/media/logo-kuarasy-branca.png" alt="Pousada Kuarasy"></a><p>Um refúgio à beira-mar na Praia do Boqueirão, em Japaratinga.</p></div>
           <div class="footer-links">
             <div><span>Descubra</span><a href="/acomodacoes/">Acomodações</a><a href="/mhares/">Mhares Restaurante</a><a href="/beach-club/">Beach Club</a></div>
             <div><span>Planeje</span><a href="/servicos/">Serviços</a><a href="/eventos/">Eventos</a><a href="/contato/">Contato</a></div>
