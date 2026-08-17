@@ -548,6 +548,140 @@ h3 { margin: 0; font-size: clamp(27px, 3vw, 40px); line-height: 1.04; }
   }
 }
 
+/* Revisão tipográfica e de ritmo — Jost + Quicksand */
+@font-face {
+  font-family: "Jost Local";
+  src: url("/assets/fonts/Jost-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quicksand Local";
+  src: url("/assets/fonts/Quicksand-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-display: "Jost Local";
+  --font-sans: "Quicksand Local";
+}
+
+body, button, input, select, textarea { font-family: var(--font-sans), Arial, sans-serif; font-weight: 300; }
+h1, h2, h3, blockquote, .faq-list summary {
+  font-family: var(--font-display), Arial, sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .015em;
+  line-height: 1.05;
+}
+
+/* O header nasce apenas depois do primeiro hero */
+.site-header {
+  transform: translateY(0);
+  transition: transform .48s cubic-bezier(.22, 1, .36, 1), color .35s ease, background-color .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.site-header.site-header--over-hero {
+  transform: translateY(calc(-100% - 4px));
+  background: transparent;
+  border-color: transparent;
+}
+.site-header.is-menu-open { transform: translateY(0); }
+
+.header-cta {
+  min-width: 112px;
+  padding: 12px 19px;
+  border: 1px solid currentColor;
+  text-align: center;
+  transition: color .3s ease, background-color .3s ease;
+}
+.header-cta:hover, .header-cta:focus-visible { background: var(--green); color: white; }
+
+/* Hero sem o peso visual do header */
+.hero-content, .page-hero-content { margin-top: 0; margin-bottom: 0; }
+.hero, .page-hero { align-items: center; }
+
+/* Início */
+.experiences .section-heading { max-width: 900px; margin-inline: auto; text-align: center; }
+.experience-grid { align-items: stretch; }
+.experience-card, .experience-card--2 { margin-top: 0; }
+.experience-image,
+.experience-card--2 .experience-image,
+.experience-card--3 .experience-image { height: 540px; }
+.experiences { padding-bottom: 105px; }
+
+/* Botões e CTAs */
+.button { min-height: 60px; padding-inline: 34px; font-size: 11px; }
+.cta-section .eyebrow { margin-bottom: 14px; }
+.cta-section .button { margin-top: 38px; }
+.cta-section > p:not(.eyebrow) { margin-top: 22px; margin-bottom: 0; }
+
+/* Acomodações */
+.room-number { display: none; }
+.room-feature { margin-bottom: 100px; }
+.room-image { height: 560px; }
+.rooms-section { padding-bottom: 75px; }
+.amenities { padding-block: 105px; }
+.amenities .section-heading { max-width: 920px; margin-inline: auto; text-align: center; }
+.amenities ul { grid-template-columns: 1fr; max-width: 960px; margin-inline: auto; gap: 0; }
+.amenities li {
+  display: grid;
+  grid-template-columns: 100px 1fr 34px;
+  align-items: center;
+  min-height: 94px;
+  padding: 20px 8px;
+  font-size: clamp(17px, 1.7vw, 23px);
+  transition: padding .35s ease, background-color .35s ease;
+}
+.amenities li::after { content: "↗"; opacity: 0; transform: translate(-8px, 8px); transition: opacity .3s, transform .3s; }
+.amenities li:hover { padding-inline: 20px; background: rgba(255,255,255,.62); }
+.amenities li:hover::after { opacity: 1; transform: translate(0); }
+.amenities li span { font-size: clamp(25px, 3vw, 42px); font-family: var(--font-display); }
+
+/* Mhares */
+.editorial-image { height: 650px; }
+.wide-story-card {
+  left: auto;
+  right: max(48px, calc((100vw - var(--content-max)) / 2));
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+/* Eventos */
+.events-intro li { font-size: clamp(19px, 1.8vw, 27px); }
+.events-intro li span { min-width: 54px; font-size: clamp(20px, 2.5vw, 34px); font-family: var(--font-display); }
+
+/* Serviços */
+.services-showcase .section-heading { max-width: 900px; margin-inline: auto; text-align: center; }
+.service-feature-image { height: 470px; }
+
+@media (max-width: 1024px) {
+  .experience-image,
+  .experience-card--2 .experience-image,
+  .experience-card--3 .experience-image { height: 470px; }
+  .room-image { height: 500px; }
+  .editorial-image { height: 570px; }
+}
+
+@media (max-width: 767px) {
+  .hero-content, .page-hero-content { margin: 0 auto; }
+  .experience-image,
+  .experience-card--2 .experience-image,
+  .experience-card--3 .experience-image { height: 440px; }
+  .experiences { padding-bottom: 75px; }
+  .room-feature { margin-bottom: 75px; }
+  .room-image { height: 430px; }
+  .rooms-section { padding-bottom: 55px; }
+  .amenities { padding-block: 80px; }
+  .amenities li { grid-template-columns: 70px 1fr 24px; min-height: 82px; padding-inline: 0; }
+  .wide-story-card { left: 50%; right: auto; transform: translate(-50%, 50%); }
+  .editorial-image { height: 470px; }
+  .service-feature-image { height: 390px; }
+}
+
 /* Header fixo com contraste automático */
 .site-header {
   position: fixed;
@@ -662,4 +796,27 @@ h3 { margin: 0; font-size: clamp(27px, 3vw, 40px); line-height: 1.04; }
   .service-feature:nth-child(even) .service-feature-image { order: 0; }
   .service-feature-image { height: 390px; }
   .service-feature-copy > span { margin-bottom: 28px; }
+}
+
+/* Ajustes finais de precedência */
+.site-header.site-header--over-hero {
+  transform: translateY(calc(-100% - 4px));
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.site-header.is-menu-open { transform: translateY(0); }
+.hero, .page-hero { align-items: center; }
+.hero-content, .page-hero-content { margin: 0 auto; }
+.wide-story-card {
+  left: auto;
+  right: max(48px, calc((100vw - var(--content-max)) / 2));
+  bottom: 50%;
+  transform: translateY(50%);
+}
+
+@media (max-width: 767px) {
+  .hero-content, .page-hero-content { margin: 0 auto; }
+  .wide-story-card { left: 50%; right: auto; transform: translate(-50%, 50%); }
 }

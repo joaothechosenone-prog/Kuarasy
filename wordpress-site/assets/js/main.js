@@ -52,7 +52,7 @@
   document.body.classList.toggle("has-no-page-hero", !hero);
   const syncHeaderContrast = () => {
     if (!siteHeader) return;
-    const overHero = hero && window.scrollY < hero.offsetHeight - siteHeader.offsetHeight;
+    const overHero = hero && window.scrollY < hero.offsetHeight - 1;
     siteHeader.classList.toggle("site-header--over-hero", Boolean(overHero));
     siteHeader.classList.toggle("site-header--scrolled", !overHero || window.scrollY > 24);
   };
