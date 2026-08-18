@@ -142,7 +142,7 @@
       const cardWidth = cards[0].getBoundingClientRect().width || 220;
       const stageWidth = stage.getBoundingClientRect().width || window.innerWidth;
       const visibleDepth = stageWidth >= 1500 ? 5 : stageWidth >= 700 ? 4 : 2;
-      const pitch = Math.max(cardWidth * .46, (stageWidth / 2 - cardWidth * .28) / visibleDepth);
+      const pitch = Math.max(cardWidth * .46, stageWidth / (visibleDepth * 2));
       cards.forEach((card, index) => {
         const offset = circularOffset(index);
         const distance = Math.abs(offset);
