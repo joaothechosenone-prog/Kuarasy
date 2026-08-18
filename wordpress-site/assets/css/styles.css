@@ -2050,11 +2050,10 @@ h1, h2, h3, blockquote, .faq-list summary {
   width: 54px;
   height: 54px;
   border: 1px solid rgba(15, 81, 73, .35);
-  border-radius: 50%;
-  color: var(--green);
-  font-family: Georgia, serif;
-  font-size: 27px;
+  border-radius: 0;
+  padding: 12px;
 }
+.events-intro li .event-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
 
 /* Coverflow realmente de ponta a ponta */
 .home-page .testimonials-section { overflow: hidden; }
@@ -2079,7 +2078,7 @@ h1, h2, h3, blockquote, .faq-list summary {
   .mhares-photo--one { left: 0; width: 66%; height: 350px; }
   .mhares-photo--two { right: 0; width: 52%; height: 285px; }
   .wide-story--video .wide-story-card { width: calc(100% - 36px); margin: auto; }
-  .events-intro li .event-icon { flex-basis: 46px; width: 46px; height: 46px; font-size: 23px; }
+  .events-intro li .event-icon { flex-basis: 52px; width: 52px; height: 52px; padding: 10px; }
 }
 
 /* Heróis — posição e contraste consistentes em todas as páginas */
@@ -2114,7 +2113,7 @@ h1, h2, h3, blockquote, .faq-list summary {
 .page-hero-content {
   position: relative;
   top: 4px;
-  margin-top: 150px !important;
+  margin-top: 75px !important;
 }
 
 @media (max-width: 767px) {

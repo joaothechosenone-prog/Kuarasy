@@ -376,7 +376,8 @@ h1, h2, h3, blockquote, .faq-list summary {
 .wide-story--video > video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .wide-story-shade { position: absolute; inset: 0; background: rgba(3,25,22,.28); }
 .wide-story--video .wide-story-card { position: relative; inset: auto; transform: none; margin: auto; text-align: center; }
-.events-intro li .event-icon { display: grid; place-items: center; flex: 0 0 54px; width: 54px; height: 54px; border: 1px solid rgba(15,81,73,.35); border-radius: 50%; color: var(--green); font-family: Georgia,serif; font-size: 27px; }
+.events-intro li .event-icon { display: grid; place-items: center; flex: 0 0 54px; width: 54px; height: 54px; border: 1px solid rgba(15,81,73,.35); border-radius: 0; padding: 12px; }
+.events-intro li .event-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
 @media (max-width: 1024px) { .mhares-editorial { grid-template-columns: 1fr; } .mhares-editorial .editorial-copy { max-width: 720px; margin-inline: auto; text-align: center; } }
 @media (max-width: 767px) {
   .rooms-section--panoramic { padding-block: 82px; }
@@ -388,7 +389,7 @@ h1, h2, h3, blockquote, .faq-list summary {
   .mhares-photo--one { left: 0; width: 66%; height: 350px; }
   .mhares-photo--two { right: 0; width: 52%; height: 285px; }
   .wide-story--video .wide-story-card { width: calc(100% - 36px); margin: auto; }
-  .events-intro li .event-icon { flex-basis: 46px; width: 46px; height: 46px; font-size: 23px; }
+  .events-intro li .event-icon { flex-basis: 52px; width: 52px; height: 52px; padding: 10px; }
 }
 
 /* Heróis — posição e contraste consistentes em todas as páginas */
@@ -398,5 +399,5 @@ h1, h2, h3, blockquote, .faq-list summary {
 .hero-shade, .page-hero-shade, .page-hero--strong-shade .page-hero-shade { background: linear-gradient(180deg, rgba(3,25,22,.56), rgba(3,25,22,.44) 52%, rgba(3,25,22,.60)); }
 
 /* Compensa a faixa ocupada pelo header fixo nos heróis. */
-.hero-content, .page-hero-content { position: relative; top: 4px; margin-top: 150px !important; }
+.hero-content, .page-hero-content { position: relative; top: 4px; margin-top: 75px !important; }
 @media (max-width: 767px) { .hero-content, .page-hero-content { top: -14px; } }

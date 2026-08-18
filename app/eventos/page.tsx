@@ -6,14 +6,14 @@ import { PageHero } from "../components/PageHero";
 
 export const metadata: Metadata = { title: "Eventos | Pousada Kuarasy", description: "Casamentos e celebrações à beira-mar em Japaratinga." };
 
-const types = [["♡", "Casamentos"], ["✦", "Aniversários"], ["◇", "Reuniões e confraternizações"], ["☼", "Celebrações entre familiares e amigos"]];
+const types = [["/media/event-casamento.svg", "Casamentos"], ["/media/event-aniversario.svg", "Aniversários"], ["/media/event-reunioes.svg", "Reuniões e confraternizações"], ["/media/event-celebracoes.svg", "Celebrações entre familiares e amigos"]];
 
 export default function EventsPage() {
   return <main><Motion />
     <PageHero eyebrow="Eventos" title="Celebrações inesquecíveis à beira-mar" subtitle="Casamentos, réveillons e momentos especiais em um dos cenários mais encantadores do litoral alagoano." image="/media/wedding.jpeg" images={["/media/wedding.jpeg", "/media/sunset-palms.jpeg", "/media/beach-sunset.jpeg"]} />
     <section className="events-intro section-shell">
       <div data-reveal><p className="eyebrow">Até 120 pessoas</p><h2>Cada celebração merece o cenário certo</h2><p>Entre convidados e equipe de apoio, a Kuarasy recebe celebrações cercadas pelo mar e pela natureza de Japaratinga.</p></div>
-      <ol>{types.map(([icon, type]) => <li key={type} data-reveal><span className="event-icon" aria-hidden="true">{icon}</span>{type}</li>)}</ol>
+      <ol>{types.map(([icon, type]) => <li key={type} data-reveal><span className="event-icon" aria-hidden="true"><img src={icon} alt="" /></span>{type}</li>)}</ol>
     </section>
     <section className="split-feature split-feature--reverse">
       <div className="split-media"><img src="/media/beach-sunset.jpeg" alt="Pôr do sol em Japaratinga" data-parallax /></div>
