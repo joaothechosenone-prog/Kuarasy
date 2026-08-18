@@ -1,5 +1,6 @@
 (() => {
   const links = [
+    ["/", "Início"],
     ["/acomodacoes/", "Acomodações"],
     ["/mhares/", "Mhares"],
     ["/eventos/", "Eventos"],
@@ -13,13 +14,12 @@
       <header class="site-header ${overlay ? "site-header--overlay" : "site-header--solid"}">
         <a class="wordmark brand-logo brand-logo--header" href="/" aria-label="Pousada Kuarasy - início"><img src="/assets/media/logo-kuarasy-verde.png" alt="Pousada Kuarasy"></a>
         <nav class="desktop-nav" aria-label="Navegação principal">
-          ${links.map(([href, label]) => `<a href="${href}"${location.pathname.startsWith(href) ? ' class="is-active"' : ""}>${label}</a>`).join("")}
+          ${links.map(([href, label]) => `<a href="${href}"${href === "/" ? (location.pathname === "/" || location.pathname === "/site-pages/" ? ' class="is-active"' : "") : (location.pathname.startsWith(href) ? ' class="is-active"' : "")}>${label}</a>`).join("")}
         </nav>
         <a class="header-cta desktop-book" href="/contato/">Reservar</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span><span></span></button>
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
           <nav aria-label="Navegação móvel">
-            <a href="/">Início</a>
             ${links.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
             <a href="/contato/">Contato</a>
           </nav>

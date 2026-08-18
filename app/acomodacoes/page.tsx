@@ -11,7 +11,17 @@ const rooms = [
   { number: "03", title: "Bangalôs Vista Parcial Mar", copy: "Autenticidade e requinte em ambientes que dialogam com o entorno. Tons sóbrios, madeira e fibras naturais criam um refúgio intimista.", image: "/media/bungalows-aerial.jpeg" },
   { number: "08", title: "Apartamentos", copy: "Quatro unidades no térreo com vista para o jardim e quatro no primeiro andar com vista para o mar. Ambientes amplos, serenos e cuidadosamente decorados.", image: "/media/bungalow-interior.jpeg" },
 ];
-const amenities = ["Varanda privativa com rede e mobiliário", "Ar-condicionado", "Smart TV", "Cafeteira elétrica", "Frigobar", "Cofre eletrônico", "Ramal telefônico", "Secador de cabelo", "Wi-Fi gratuito"];
+const amenities = [
+  { title: "Varanda privativa com rede e mobiliário", image: "/media/bungalow-hammock.jpeg" },
+  { title: "Ar-condicionado", image: "/media/bungalow-interior.jpeg" },
+  { title: "Smart TV", image: "/media/bungalows-aerial.jpeg" },
+  { title: "Cafeteira elétrica", image: "/media/restaurant.jpeg" },
+  { title: "Frigobar", image: "/media/cocktail.jpeg" },
+  { title: "Cofre eletrônico", image: "/media/entrance-night.jpeg" },
+  { title: "Ramal telefônico", image: "/media/dish.jpeg" },
+  { title: "Secador de cabelo", image: "/media/pool-ocean.jpeg" },
+  { title: "Wi-Fi gratuito", image: "/media/sunset-palms.jpeg" },
+];
 
 export default function RoomsPage() {
   return <main><Motion />
@@ -22,9 +32,8 @@ export default function RoomsPage() {
         <div className="room-copy" data-reveal><span className="room-number">{room.number}</span><p className="eyebrow">Acomodações</p><h2>{room.title}</h2><p>{room.copy}</p></div>
       </article>)}
     </section>
-    <section className="amenities"><div className="section-shell"><div className="section-heading" data-reveal><p className="eyebrow">Conforto em todos os detalhes</p><h2>O que você encontra em cada acomodação</h2></div><ul>{amenities.map((item, index) => <li key={item} data-reveal><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}</ul></div></section>
+    <section className="amenities amenities--gallery"><div className="section-shell"><div className="section-heading" data-reveal><p className="eyebrow">Conforto em todos os detalhes</p><h2>O que você encontra em cada acomodação</h2></div><div className="amenities-grid">{amenities.map((item) => <article className="amenity-card" key={item.title} data-reveal><img src={item.image} alt="" /><h3>{item.title}</h3></article>)}</div></div></section>
     <CTA title="Escolha a acomodação perfeita para a sua estadia" subtitle="Vagas limitadas durante a alta temporada em Japaratinga." label="Quero reservar agora" />
     <Footer />
   </main>;
 }
-

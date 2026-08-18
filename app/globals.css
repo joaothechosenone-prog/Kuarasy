@@ -11,6 +11,14 @@
   --white: #ffffff;
 }
 
+@font-face {
+  font-family: "Quattrocento Local";
+  src: url("/assets/fonts/Quattrocento-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -276,3 +284,30 @@ h3 { margin: 0; font-size: clamp(27px, 3vw, 40px); line-height: 1.04; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
+/* Tipografia global de títulos — Quattrocento */
+h1, h2, h3, blockquote, .faq-list summary {
+  font-family: "Quattrocento Local", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: .01em;
+  text-transform: none !important;
+}
+
+/* Acomodações — galeria de comodidades 3 × 3 */
+.amenities--gallery { background: var(--white); }
+.amenities--gallery .section-heading { margin-bottom: 58px; }
+.amenities-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.amenity-card { position: relative; min-height: 390px; overflow: hidden; border-radius: 4px; background: var(--green-dark); }
+.amenity-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,34,30,.08) 38%, rgba(5,34,30,.78) 100%); }
+.amenity-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.22,1,.36,1); }
+.amenity-card:hover img { transform: scale(1.045); }
+.amenity-card h3 { position: absolute; z-index: 1; left: 28px; right: 28px; bottom: 26px; color: white; font-size: clamp(23px, 2vw, 30px); line-height: 1.12; }
+@media (max-width: 1024px) {
+  .amenities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .amenity-card { min-height: 350px; }
+}
+@media (max-width: 767px) {
+  .amenities--gallery .section-heading { margin-bottom: 38px; }
+  .amenities-grid { grid-template-columns: 1fr; gap: 18px; }
+  .amenity-card { min-height: 320px; }
+  .amenity-card h3 { left: 22px; right: 22px; bottom: 21px; }
+}

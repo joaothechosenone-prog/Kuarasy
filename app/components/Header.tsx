@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
+  ["/", "Início"],
   ["/acomodacoes", "Acomodações"],
   ["/mhares", "Mhares"],
   ["/eventos", "Eventos"],
@@ -34,7 +35,6 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
       </button>
       <div className={`mobile-menu ${open ? "is-open" : ""}`} id="mobile-menu" aria-hidden={!open}>
         <nav aria-label="Navegação móvel">
-          <Link href="/">Início</Link>
           {links.map(([href, label]) => <Link href={href} key={href}>{label}</Link>)}
           <Link href="/contato">Contato</Link>
         </nav>
