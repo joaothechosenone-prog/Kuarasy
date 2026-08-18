@@ -6,20 +6,33 @@ import { useEffect, useState } from "react";
 
 const links = [
   ["/", "Início"],
+  ["/servicos", "Serviços"],
   ["/acomodacoes", "Acomodações"],
   ["/mhares", "Mhares"],
   ["/eventos", "Eventos"],
-  ["/servicos", "Serviços"],
 ];
 
 export function Header({ overlay = false }: { overlay?: boolean }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => setOpen(false), [pathname]);
 
+  useEffect(() => {
+    let previousScrollY = window.scrollY;
+    const handleScroll = () => {
+      const delta = window.scrollY - previousScrollY;
+      if (window.scrollY <= 24 || delta < -5) setHidden(false);
+      if (!open && window.scrollY > 120 && delta > 5) setHidden(true);
+      previousScrollY = window.scrollY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [open]);
+
   return (
-    <header className={`site-header ${overlay ? "site-header--overlay" : "site-header--solid"}`}>
+    <header className={`site-header ${overlay ? "site-header--overlay" : "site-header--solid"} ${hidden && !open ? "site-header--hidden" : ""}`}>
       <Link className="wordmark" href="/" aria-label="Pousada Kuarasy - início">
         <small>Pousada</small>
         <strong>Kuarasy</strong>
@@ -29,7 +42,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           <Link className={pathname === href ? "is-active" : ""} href={href} key={href}>{label}</Link>
         ))}
       </nav>
-      <Link className="header-cta desktop-book" href="/contato">Reservar</Link>
+      <Link className="header-cta desktop-book" href="/contato">Contato</Link>
       <button className="menu-toggle" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Fechar menu" : "Abrir menu"}>
         <span /><span />
       </button>

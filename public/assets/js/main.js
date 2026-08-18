@@ -1,10 +1,10 @@
 (() => {
   const links = [
     ["/", "Início"],
+    ["/servicos/", "Serviços"],
     ["/acomodacoes/", "Acomodações"],
     ["/mhares/", "Mhares"],
     ["/eventos/", "Eventos"],
-    ["/servicos/", "Serviços"],
   ];
 
   const headerRoot = document.querySelector("[data-site-header]");
@@ -16,7 +16,7 @@
         <nav class="desktop-nav" aria-label="Navegação principal">
           ${links.map(([href, label]) => `<a href="${href}"${href === "/" ? (location.pathname === "/" || location.pathname === "/site-pages/" ? ' class="is-active"' : "") : (location.pathname.startsWith(href) ? ' class="is-active"' : "")}>${label}</a>`).join("")}
         </nav>
-        <a class="header-cta desktop-book" href="/contato/">Reservar</a>
+        <a class="header-cta desktop-book" href="/contato/">Contato</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span><span></span></button>
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
           <nav aria-label="Navegação móvel">
@@ -49,11 +49,18 @@
   const siteHeader = document.querySelector(".site-header");
   const hero = document.querySelector(".hero, .page-hero");
   document.body.classList.toggle("has-no-page-hero", !hero);
+  let previousScrollY = window.scrollY;
   const syncHeaderContrast = () => {
     if (!siteHeader) return;
     const overHero = hero && window.scrollY < hero.offsetHeight - 1;
+    const delta = window.scrollY - previousScrollY;
     siteHeader.classList.toggle("site-header--over-hero", Boolean(overHero));
     siteHeader.classList.toggle("site-header--scrolled", !overHero || window.scrollY > 24);
+    if (!siteHeader.classList.contains("is-menu-open")) {
+      if (window.scrollY <= 24 || delta < -5) siteHeader.classList.remove("site-header--hidden");
+      if (window.scrollY > 120 && delta > 5) siteHeader.classList.add("site-header--hidden");
+    }
+    previousScrollY = window.scrollY;
   };
   syncHeaderContrast();
   window.addEventListener("scroll", syncHeaderContrast, { passive: true });
@@ -65,6 +72,7 @@
     mobileMenu?.classList.toggle("is-open", open);
     mobileMenu?.setAttribute("aria-hidden", String(!open));
     siteHeader?.classList.toggle("is-menu-open", open);
+    if (open) siteHeader?.classList.remove("site-header--hidden");
   });
 
   const form = document.querySelector(".contact-form");
