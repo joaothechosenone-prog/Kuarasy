@@ -1708,3 +1708,28 @@ h3,
   .home-page .editorial-home--beach .editorial-home-main { height: 430px; }
   .home-page .editorial-home-side .editorial-home-title { padding-bottom: 24px; font-size: 36px; }
 }
+
+/* Ritmo entre as seções 3, 4 e 5 */
+.home-page .editorial-home--accommodations,
+.home-page .editorial-home--mhares,
+.home-page .editorial-home--beach {
+  border-top: 0;
+}
+.home-page .editorial-home--accommodations {
+  padding-block: 120px 0;
+}
+.home-page .editorial-home--mhares,
+.home-page .editorial-home--beach {
+  margin-top: 60px;
+  padding-block: 0;
+}
+.home-page .editorial-home--beach {
+  margin-bottom: 120px;
+}
+
+@media (max-width: 767px) {
+  .home-page .editorial-home--accommodations { padding-block: 82px 0; }
+  .home-page .editorial-home--mhares,
+  .home-page .editorial-home--beach { margin-top: 60px; padding-block: 0; }
+  .home-page .editorial-home--beach { margin-bottom: 82px; }
+}
