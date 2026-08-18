@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 const links = [
   ["/acomodacoes", "Acomodações"],
   ["/mhares", "Mhares"],
-  ["/beach-club", "Beach Club"],
   ["/eventos", "Eventos"],
   ["/servicos", "Serviços"],
 ];
@@ -47,4 +46,3 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
     </header>
   );
 }
-

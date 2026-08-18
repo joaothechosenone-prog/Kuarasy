@@ -7,7 +7,6 @@ import { Motion } from "./components/Motion";
 const experiences = [
   { href: "/acomodacoes", eyebrow: "Acomodações", title: "14 refúgios à beira-mar", copy: "Bangalôs pé na areia e apartamentos entre o jardim e o oceano.", image: "/media/bungalow-interior.jpeg" },
   { href: "/mhares", eyebrow: "Gastronomia", title: "O Nordeste à mesa", copy: "Ingredientes frescos, técnica contemporânea e uma vista que muda tudo.", image: "/media/restaurant.jpeg" },
-  { href: "/beach-club", eyebrow: "Beach Club", title: "Entre a piscina e o mar", copy: "Drinks autorais, água agradável e o horizonte de Japaratinga.", image: "/media/pool-ocean.jpeg" },
 ];
 
 export default function Home() {
@@ -70,16 +69,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="split-feature">
-        <div className="split-media"><img src="/media/beach-sunset.jpeg" alt="Pôr do sol na Praia do Boqueirão" data-parallax /></div>
-        <div className="split-copy" data-reveal>
-          <p className="eyebrow">Do azul ao dourado</p>
-          <h2>Sua tarde começa na piscina e não tem hora para acabar</h2>
-          <p>Água na temperatura certa, drinks autorais no bar molhado e a Praia do Boqueirão no horizonte. Um convite para desacelerar, esteja você hospedado ou não.</p>
-          <Link className="text-link" href="/beach-club">Conhecer o Beach Club <b>↗</b></Link>
-        </div>
-      </section>
-
       <section className="quote-section section-shell" data-reveal>
         <p className="eyebrow">Quem já viveu, recomenda</p>
         <blockquote>“Há lugares que a gente visita. E há lugares que passam a fazer parte da nossa história.”</blockquote>
@@ -91,4 +80,3 @@ export default function Home() {
     </main>
   );
 }
-

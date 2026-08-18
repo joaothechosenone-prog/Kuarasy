@@ -12,7 +12,7 @@ const faqs = [
   ["O café da manhã está incluso na diária?", "Sim, servido todos os dias das 8h às 10h, com sabores e frutas regionais."],
   ["Como faço para reservar?", "Você pode reservar pelo motor de reservas ou falar diretamente com a equipe pelo WhatsApp."],
   ["Vocês oferecem transfer do aeroporto?", "Sim. Indicamos serviços terceirizados quando solicitados antecipadamente pelo WhatsApp."],
-  ["O restaurante e o Beach Club são abertos para não hóspedes?", "Sim. Ambos recebem visitantes diariamente; o restaurante atende café, almoço e jantar."],
+  ["O restaurante é aberto para não hóspedes?", "Sim. O restaurante recebe visitantes diariamente e atende café, almoço e jantar."],
   ["Qual a capacidade máxima para eventos?", "Até 120 pessoas, somando convidados e equipe de apoio."],
   ["Como chegar até a pousada?", "Estamos a cerca de 130 km do aeroporto de Maceió e 140 km do aeroporto do Recife. O centro de Japaratinga fica a 6,7 km."],
 ];
@@ -32,4 +32,3 @@ export default function ContactPage() {
     <Footer />
   </main>;
 }
-

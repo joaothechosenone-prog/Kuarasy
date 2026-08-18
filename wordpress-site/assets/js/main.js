@@ -2,7 +2,6 @@
   const links = [
     ["/acomodacoes/", "Acomodações"],
     ["/mhares/", "Mhares"],
-    ["/beach-club/", "Beach Club"],
     ["/eventos/", "Eventos"],
     ["/servicos/", "Serviços"],
   ];
@@ -36,7 +35,7 @@
         <div class="footer-top">
           <div><a class="wordmark footer-wordmark brand-logo brand-logo--footer" href="/" aria-label="Pousada Kuarasy - início"><img src="/assets/media/logo-kuarasy-branca.png" alt="Pousada Kuarasy"></a><p>Um refúgio à beira-mar na Praia do Boqueirão, em Japaratinga.</p></div>
           <div class="footer-links">
-            <div><span>Descubra</span><a href="/acomodacoes/">Acomodações</a><a href="/mhares/">Mhares Restaurante</a><a href="/beach-club/">Beach Club</a></div>
+            <div><span>Descubra</span><a href="/acomodacoes/">Acomodações</a><a href="/mhares/">Mhares Restaurante</a></div>
             <div><span>Planeje</span><a href="/servicos/">Serviços</a><a href="/eventos/">Eventos</a><a href="/contato/">Contato</a></div>
             <div><span>Fale conosco</span><a href="https://wa.me/5582981084726">WhatsApp</a><a href="mailto:kuarasy.gerencia@gmail.com">E-mail</a><a href="https://www.instagram.com/pousadakuarasy/">Instagram</a></div>
           </div>

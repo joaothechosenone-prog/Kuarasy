@@ -17,7 +17,7 @@ const sans = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL("https://pousadakuarasy.com"),
   title: "Pousada Kuarasy | Japaratinga, Alagoas",
-  description: "Pousada de charme à beira-mar em Japaratinga, com bangalôs, gastronomia autoral e Beach Club.",
+  description: "Pousada de charme à beira-mar em Japaratinga, com bangalôs e gastronomia autoral.",
   openGraph: {
     title: "Pousada Kuarasy | O luxo de viver sem pressa",
     description: "Bangalôs à beira-mar, gastronomia autoral e a tranquilidade de Japaratinga.",
