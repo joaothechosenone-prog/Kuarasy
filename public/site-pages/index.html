@@ -6,10 +6,10 @@
   <title>Pousada Kuarasy | Japaratinga, Alagoas</title>
   <meta name="description" content="Pousada de charme à beira-mar em Japaratinga, com bangalôs, gastronomia autoral e Beach Club.">
   <meta property="og:image" content="/assets/media/og.png">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=16">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=17">
   <script defer src="/assets/js/vendor/gsap.min.js"></script>
   <script defer src="/assets/js/vendor/ScrollTrigger.min.js"></script>
-  <script defer src="/assets/js/main.js"></script>
+  <script defer src="/assets/js/main.js?v=17"></script>
 </head>
 <body class="home-page">
   <div data-site-header data-overlay="true"></div>
@@ -48,9 +48,20 @@
   </section>
   <section class="testimonials-section section-shell" data-reveal>
     <h2>Quem já viveu, recomenda</h2>
-    <div class="testimonial-carousel" data-carousel>
-      <div class="testimonial-viewport"><div class="testimonial-track"><article class="testimonial-slide">[INSERIR DEPOIMENTOS]</article></div></div>
-      <div class="testimonial-controls"><button type="button" data-carousel-prev aria-label="Depoimento anterior">←</button><div class="testimonial-dots" data-carousel-dots></div><button type="button" data-carousel-next aria-label="Próximo depoimento">→</button></div>
+    <div class="testimonial-coverflow" data-coverflow role="region" aria-roledescription="carrossel" aria-label="Depoimentos de hóspedes">
+      <div class="coverflow-stage" data-coverflow-stage tabindex="0" aria-label="Use as setas do teclado ou arraste para navegar">
+        <article class="coverflow-card" data-coverflow-card><img src="/assets/media/bungalow-hammock.jpeg" alt="Varanda de bangalô da Kuarasy" draggable="false"></article>
+        <article class="coverflow-card" data-coverflow-card><img src="/assets/media/pool-ocean.jpeg" alt="Piscina de frente para o mar" draggable="false"></article>
+        <article class="coverflow-card" data-coverflow-card><img src="/assets/media/restaurant.jpeg" alt="Restaurante Mhares" draggable="false"></article>
+        <article class="coverflow-card" data-coverflow-card><img src="/assets/media/beach-sunset.jpeg" alt="Entardecer na praia" draggable="false"></article>
+        <article class="coverflow-card" data-coverflow-card><img src="/assets/media/bungalow-interior.jpeg" alt="Interior de acomodação da Kuarasy" draggable="false"></article>
+      </div>
+      <div class="coverflow-caption" aria-live="polite">[INSERIR DEPOIMENTOS]</div>
+      <div class="coverflow-controls">
+        <button type="button" data-coverflow-prev aria-label="Depoimento anterior">←</button>
+        <div class="coverflow-dots" data-coverflow-dots aria-label="Selecionar depoimento"></div>
+        <button type="button" data-coverflow-next aria-label="Próximo depoimento">→</button>
+      </div>
     </div>
   </section>
   <section class="cta-section section-shell" data-reveal><h2>Sua próxima lembrança inesquecível começa aqui</h2><p>Poucas datas disponíveis durante a alta temporada em Japaratinga</p><a class="button button--green" href="https://wa.me/5582981084726">Quero fazer minha reserva</a></section>

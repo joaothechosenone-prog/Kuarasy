@@ -1733,3 +1733,110 @@ h3,
   .home-page .editorial-home--beach { margin-top: 60px; padding-block: 0; }
   .home-page .editorial-home--beach { margin-bottom: 82px; }
 }
+
+/* Depoimentos — coverflow em JavaScript puro, compatível com Elementor */
+.home-page .testimonials-section {
+  margin-top: 0;
+  padding-block: 120px;
+  overflow: hidden;
+  border-top: 0;
+  text-align: center;
+}
+.home-page .testimonials-section > h2 {
+  margin-bottom: 62px;
+  font-size: clamp(40px, 4vw, 56px);
+}
+.testimonial-coverflow {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+}
+.coverflow-stage {
+  position: relative;
+  height: clamp(310px, 32vw, 390px);
+  padding-block: 24px;
+  outline: none;
+  perspective: 850px;
+  perspective-origin: 50% 46%;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+.coverflow-stage.is-dragging { cursor: grabbing; }
+.coverflow-stage:focus-visible { box-shadow: inset 0 0 0 1px var(--green); }
+.coverflow-card {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: clamp(165px, 21vw, 255px);
+  aspect-ratio: .82;
+  overflow: hidden;
+  border-radius: 14px;
+  background: var(--cream);
+  box-shadow: 0 20px 48px rgba(8, 60, 54, .14);
+  transform-style: preserve-3d;
+  transform-origin: center;
+  will-change: transform, opacity;
+  transition: transform .72s cubic-bezier(.22, 1, .36, 1), opacity .45s ease, box-shadow .45s ease;
+  cursor: pointer;
+}
+.coverflow-card.is-active { box-shadow: 0 28px 65px rgba(8, 60, 54, .22); }
+.coverflow-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.coverflow-caption {
+  min-height: 76px;
+  display: grid;
+  place-items: center;
+  max-width: 720px;
+  margin: 18px auto 0;
+  color: var(--ink);
+  font-family: "Quattrocento Local", Georgia, serif;
+  font-size: 22px;
+}
+.coverflow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 18px;
+}
+.coverflow-controls > button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  background: white;
+  color: var(--green);
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color .3s ease, color .3s ease;
+}
+.coverflow-controls > button:hover,
+.coverflow-controls > button:focus-visible { background: var(--green); color: white; }
+.coverflow-dots { display: flex; gap: 9px; }
+.coverflow-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+}
+.coverflow-dots button.is-active { background: var(--green); }
+
+@media (max-width: 767px) {
+  .home-page .testimonials-section { padding-block: 82px; }
+  .home-page .testimonials-section > h2 { margin-bottom: 42px; font-size: 38px; }
+  .coverflow-stage { height: 320px; }
+  .coverflow-card { width: 190px; }
+  .coverflow-caption { min-height: 64px; font-size: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coverflow-card { transition-duration: .01ms; }
+}

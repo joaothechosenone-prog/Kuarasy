@@ -100,6 +100,85 @@
     update();
   });
 
+  document.querySelectorAll("[data-coverflow]").forEach((carousel) => {
+    const stage = carousel.querySelector("[data-coverflow-stage]");
+    const cards = [...carousel.querySelectorAll("[data-coverflow-card]")];
+    const previous = carousel.querySelector("[data-coverflow-prev]");
+    const next = carousel.querySelector("[data-coverflow-next]");
+    const dots = carousel.querySelector("[data-coverflow-dots]");
+    if (!stage || !cards.length) return;
+
+    let active = 2;
+    let dragStart = null;
+
+    cards.forEach((card, index) => {
+      card.setAttribute("role", "group");
+      card.setAttribute("aria-roledescription", "slide");
+      card.setAttribute("aria-label", `${index + 1} de ${cards.length}`);
+      card.addEventListener("click", () => { active = index; updateCoverflow(); });
+
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Ir para o depoimento ${index + 1}`);
+      dot.addEventListener("click", () => { active = index; updateCoverflow(); });
+      dots?.appendChild(dot);
+    });
+
+    const circularOffset = (index) => {
+      let offset = index - active;
+      if (offset > cards.length / 2) offset -= cards.length;
+      if (offset < -cards.length / 2) offset += cards.length;
+      return offset;
+    };
+
+    const updateCoverflow = () => {
+      const cardWidth = cards[0].getBoundingClientRect().width || 220;
+      const pitch = cardWidth * .72;
+      cards.forEach((card, index) => {
+        const offset = circularOffset(index);
+        const distance = Math.abs(offset);
+        const tilt = Math.min(distance * 34, 72) * -Math.sign(offset);
+        card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-distance * 74}px) rotateY(${tilt}deg) scale(${1 - Math.min(distance * .055, .16)})`;
+        card.style.opacity = String(Math.max(.38, 1 - distance * .18));
+        card.style.zIndex = String(20 - distance);
+        card.classList.toggle("is-active", index === active);
+        card.setAttribute("aria-current", index === active ? "true" : "false");
+      });
+      [...(dots?.children || [])].forEach((dot, index) => dot.classList.toggle("is-active", index === active));
+    };
+
+    const nudge = (amount) => {
+      active = (active + amount + cards.length) % cards.length;
+      updateCoverflow();
+    };
+
+    previous?.addEventListener("click", () => nudge(-1));
+    next?.addEventListener("click", () => nudge(1));
+    stage.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") { event.preventDefault(); nudge(-1); }
+      if (event.key === "ArrowRight") { event.preventDefault(); nudge(1); }
+    });
+    stage.addEventListener("pointerdown", (event) => {
+      dragStart = event.clientX;
+      stage.setPointerCapture?.(event.pointerId);
+      stage.classList.add("is-dragging");
+    });
+    stage.addEventListener("pointerup", (event) => {
+      if (dragStart !== null) {
+        const distance = event.clientX - dragStart;
+        if (Math.abs(distance) > 42) nudge(distance > 0 ? -1 : 1);
+      }
+      dragStart = null;
+      stage.classList.remove("is-dragging");
+    });
+    stage.addEventListener("pointercancel", () => {
+      dragStart = null;
+      stage.classList.remove("is-dragging");
+    });
+    window.addEventListener("resize", updateCoverflow);
+    updateCoverflow();
+  });
+
   if (window.gsap && window.ScrollTrigger && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.utils.toArray("[data-reveal]").forEach((element) => {
