@@ -2113,12 +2113,12 @@ h1, h2, h3, blockquote, .faq-list summary {
 .hero-content,
 .page-hero-content {
   position: relative;
-  top: 104px;
+  top: 4px;
 }
 
 @media (max-width: 767px) {
   .hero-content,
   .page-hero-content {
-    top: 86px;
+    top: -14px;
   }
 }
