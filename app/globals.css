@@ -409,3 +409,7 @@ h1, h2, h3, blockquote, .faq-list summary {
 .event-story { padding: 0 0 180px; border-top: 0; }
 .event-story + .cta-section { padding-top: 0; border-top: 0; }
 @media (max-width: 767px) { .rooms-section--panoramic .room-panorama-image { width: 100%; height: 68vw; min-height: 270px; } .events-intro { padding-bottom: 100px; } .event-story { padding-bottom: 100px; } }
+
+/* Header: contato integra a navegação; CTA permanece sem redirecionamento. */
+.desktop-nav, .header-cta { font-size: 14px; }
+.header-cta { font-family: inherit; cursor: default; }

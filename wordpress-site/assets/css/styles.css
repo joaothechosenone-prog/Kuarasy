@@ -2142,3 +2142,8 @@ h1, h2, h3, blockquote, .faq-list summary {
   .events-intro { padding-bottom: 100px; }
   .event-story { padding-bottom: 100px; }
 }
+
+/* Header: contato integra a navegação; CTA permanece sem redirecionamento. */
+.desktop-nav,
+.header-cta { font-size: 14px; }
+.header-cta { font-family: inherit; cursor: default; }

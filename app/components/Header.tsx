@@ -10,6 +10,7 @@ const links = [
   ["/acomodacoes", "Acomodações"],
   ["/mhares", "Mhares"],
   ["/eventos", "Eventos"],
+  ["/contato", "Contato"],
 ];
 
 export function Header({ overlay = false }: { overlay?: boolean }) {
@@ -42,14 +43,13 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           <Link className={pathname === href ? "is-active" : ""} href={href} key={href}>{label}</Link>
         ))}
       </nav>
-      <Link className="header-cta desktop-book" href="/contato">Contato</Link>
+      <button className="header-cta desktop-book" type="button">Agendar minha reserva</button>
       <button className="menu-toggle" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Fechar menu" : "Abrir menu"}>
         <span /><span />
       </button>
       <div className={`mobile-menu ${open ? "is-open" : ""}`} id="mobile-menu" aria-hidden={!open}>
         <nav aria-label="Navegação móvel">
           {links.map(([href, label]) => <Link href={href} key={href}>{label}</Link>)}
-          <Link href="/contato">Contato</Link>
         </nav>
         <div className="mobile-menu-meta">
           <a href="tel:+5582981084726">+55 82 98108-4726</a>

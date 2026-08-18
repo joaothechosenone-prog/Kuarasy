@@ -5,6 +5,7 @@
     ["/acomodacoes/", "Acomodações"],
     ["/mhares/", "Mhares"],
     ["/eventos/", "Eventos"],
+    ["/contato/", "Contato"],
   ];
 
   const headerRoot = document.querySelector("[data-site-header]");
@@ -16,12 +17,11 @@
         <nav class="desktop-nav" aria-label="Navegação principal">
           ${links.map(([href, label]) => `<a href="${href}"${href === "/" ? (location.pathname === "/" || location.pathname === "/site-pages/" ? ' class="is-active"' : "") : (location.pathname.startsWith(href) ? ' class="is-active"' : "")}>${label}</a>`).join("")}
         </nav>
-        <a class="header-cta desktop-book" href="/contato/">Contato</a>
+        <button class="header-cta desktop-book" type="button">Agendar minha reserva</button>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span><span></span></button>
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
           <nav aria-label="Navegação móvel">
             ${links.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}
-            <a href="/contato/">Contato</a>
           </nav>
           <div class="mobile-menu-meta"><a href="tel:+5582981084726">+55 82 98108-4726</a><span>Praia do Boqueirão · Japaratinga</span></div>
         </div>
