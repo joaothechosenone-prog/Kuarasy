@@ -140,14 +140,17 @@
 
     const updateCoverflow = () => {
       const cardWidth = cards[0].getBoundingClientRect().width || 220;
-      const pitch = cardWidth * .72;
+      const stageWidth = stage.getBoundingClientRect().width || window.innerWidth;
+      const pitch = Math.min(cardWidth * .82, stageWidth / 6.4);
       cards.forEach((card, index) => {
         const offset = circularOffset(index);
         const distance = Math.abs(offset);
-        const tilt = Math.min(distance * 34, 72) * -Math.sign(offset);
-        card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-distance * 74}px) rotateY(${tilt}deg) scale(${1 - Math.min(distance * .055, .16)})`;
-        card.style.opacity = String(Math.max(.38, 1 - distance * .18));
+        const visible = distance <= 4;
+        const tilt = Math.min(distance * 16, 52) * -Math.sign(offset);
+        card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-distance * 46}px) rotateY(${tilt}deg) scale(${1 - Math.min(distance * .035, .14)})`;
+        card.style.opacity = visible ? String(Math.max(.72, 1 - distance * .08)) : "0";
         card.style.zIndex = String(20 - distance);
+        card.style.pointerEvents = visible ? "auto" : "none";
         card.classList.toggle("is-active", index === active);
         card.setAttribute("aria-current", index === active ? "true" : "false");
       });

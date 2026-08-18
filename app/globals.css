@@ -331,3 +331,13 @@ h1, h2, h3, blockquote, .faq-list summary {
 }
 .site-header.site-header--hidden { transform: translateY(calc(-100% - 10px)); opacity: 0; filter: blur(9px); pointer-events: none; }
 .site-header.is-menu-open { transform: translateY(0); opacity: 1; filter: blur(0); pointer-events: auto; }
+
+/* Header branco conforme a identidade visual */
+.site-header,
+.site-header.site-header--over-hero {
+  color: var(--green);
+  background: rgba(255, 255, 255, .96);
+  border-bottom: 1px solid rgba(23, 61, 56, .1);
+  box-shadow: 0 8px 30px rgba(8, 60, 54, .06);
+  backdrop-filter: blur(14px);
+}

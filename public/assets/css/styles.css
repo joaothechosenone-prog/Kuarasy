@@ -1944,3 +1944,24 @@ h1, h2, h3, blockquote, .faq-list summary {
 @media (prefers-reduced-motion: reduce) {
   .site-header { transition-duration: .01ms; }
 }
+
+/* Header branco conforme a identidade visual */
+.site-header,
+.site-header.site-header--over-hero {
+  color: var(--green);
+  background: rgba(255, 255, 255, .96);
+  border-bottom: 1px solid rgba(23, 61, 56, .1);
+  box-shadow: 0 8px 30px rgba(8, 60, 54, .06);
+  backdrop-filter: blur(14px);
+}
+
+/* Home — distância exata entre as seções 2 e 3 */
+.home-page .editorial-home--story { padding-bottom: 0; }
+.home-page .editorial-home--accommodations { padding-top: 180px; }
+
+/* Coverflow contínuo sem saltos visuais nas extremidades */
+.coverflow-stage { overflow: hidden; }
+.coverflow-card {
+  backface-visibility: hidden;
+  transition: transform .68s cubic-bezier(.22, 1, .36, 1), opacity .3s ease, box-shadow .4s ease;
+}
