@@ -75,6 +75,31 @@
     if (note) note.hidden = false;
   });
 
+  document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+    const track = carousel.querySelector(".testimonial-track");
+    const slides = [...carousel.querySelectorAll(".testimonial-slide")];
+    const previous = carousel.querySelector("[data-carousel-prev]");
+    const next = carousel.querySelector("[data-carousel-next]");
+    const dots = carousel.querySelector("[data-carousel-dots]");
+    let active = 0;
+    slides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.setAttribute("aria-label", `Ir para o depoimento ${index + 1}`);
+      dot.addEventListener("click", () => { active = index; update(); });
+      dots?.appendChild(dot);
+    });
+    const update = () => {
+      if (track) track.style.transform = `translateX(-${active * 100}%)`;
+      [...(dots?.children || [])].forEach((dot, index) => dot.classList.toggle("is-active", index === active));
+      if (previous) previous.disabled = slides.length < 2;
+      if (next) next.disabled = slides.length < 2;
+    };
+    previous?.addEventListener("click", () => { active = (active - 1 + slides.length) % slides.length; update(); });
+    next?.addEventListener("click", () => { active = (active + 1) % slides.length; update(); });
+    update();
+  });
+
   if (window.gsap && window.ScrollTrigger && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.utils.toArray("[data-reveal]").forEach((element) => {
