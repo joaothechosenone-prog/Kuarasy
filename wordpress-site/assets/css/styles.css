@@ -1407,3 +1407,69 @@ h3,
   letter-spacing: .01em;
   text-transform: none !important;
 }
+
+/* Home — seção de apresentação inspirada na referência editorial aprovada */
+.home-page .editorial-home--story {
+  grid-template-rows: auto auto auto auto;
+  column-gap: 24px;
+  row-gap: 42px;
+  padding-block: 118px 140px;
+}
+.home-page .editorial-home--story .editorial-home-title {
+  grid-column: 1 / 13;
+  grid-row: 1;
+  max-width: none;
+  padding: 0;
+  font-size: clamp(38px, 3.65vw, 56px);
+}
+.home-page .editorial-home--story .editorial-home-intro {
+  grid-column: 1 / 4;
+  grid-row: 2;
+  align-self: start;
+  max-width: 290px;
+  margin: 0;
+  color: var(--ink);
+  font-family: "Quattrocento Local", Georgia, serif;
+  font-size: clamp(23px, 2vw, 31px);
+  line-height: 1.2;
+}
+.home-page .editorial-home--story .editorial-home-small {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  align-self: start;
+  width: 100%;
+  height: 316px;
+  margin: 0;
+}
+.home-page .editorial-home--story .editorial-home-main {
+  grid-column: 5 / 13;
+  grid-row: 2 / 4;
+  align-self: start;
+  height: 466px;
+}
+.home-page .editorial-home--story .editorial-home-text {
+  grid-column: 5 / 11;
+  grid-row: 4;
+  max-width: none;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .home-page .editorial-home--story .editorial-home-intro { grid-column: 1 / 4; font-size: 25px; }
+  .home-page .editorial-home--story .editorial-home-small { grid-column: 1 / 3; height: 280px; }
+  .home-page .editorial-home--story .editorial-home-main { grid-column: 4 / 13; height: 430px; }
+  .home-page .editorial-home--story .editorial-home-text { grid-column: 4 / 12; }
+}
+
+@media (max-width: 767px) {
+  .home-page .editorial-home--story { grid-template-rows: none; gap: 30px; padding-block: 82px; }
+  .home-page .editorial-home--story .editorial-home-title,
+  .home-page .editorial-home--story .editorial-home-intro,
+  .home-page .editorial-home--story .editorial-home-small,
+  .home-page .editorial-home--story .editorial-home-main,
+  .home-page .editorial-home--story .editorial-home-text { grid-column: 1; grid-row: auto; }
+  .home-page .editorial-home--story .editorial-home-title { font-size: 38px; }
+  .home-page .editorial-home--story .editorial-home-intro { max-width: 330px; font-size: 25px; }
+  .home-page .editorial-home--story .editorial-home-small { width: 58%; height: 260px; margin: 0; }
+  .home-page .editorial-home--story .editorial-home-main { height: 420px; }
+}
