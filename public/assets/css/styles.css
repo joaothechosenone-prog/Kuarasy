@@ -1320,6 +1320,21 @@ h3,
 
 /* Ajuste final da home: Prata e grade editorial validada */
 .home-page h1, .home-page h2, .home-page h3, .home-page blockquote {
+  font-family: "Quattrocento Local", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: .01em;
+  text-transform: none !important;
+}
+
+@font-face {
+  font-family: "Quattrocento Local";
+  src: url("/assets/fonts/Quattrocento-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.home-page h1, .home-page h2, .home-page h3, .home-page blockquote {
   font-family: "Prata Local", Georgia, serif;
   font-weight: 400;
   letter-spacing: .015em;
@@ -1383,4 +1398,12 @@ h3,
   .home-page .editorial-home--mhares .editorial-home-main,
   .home-page .editorial-home--beach .editorial-home-main { height: 430px; }
   .home-page .editorial-home--beach { padding-bottom: 90px; }
+}
+
+/* Tipografia aprovada para todos os títulos da página inicial */
+.home-page h1, .home-page h2, .home-page h3, .home-page blockquote {
+  font-family: "Quattrocento Local", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: .01em;
+  text-transform: none !important;
 }
