@@ -416,3 +416,6 @@ h1, h2, h3, blockquote, .faq-list summary {
 
 /* Compactação final do header. */
 .desktop-nav, .header-cta { font-size: 12px; }
+
+/* Sem imagem anterior durante o carregamento dos vídeos dos heróis. */
+.hero, .page-hero { background: var(--green-dark); }

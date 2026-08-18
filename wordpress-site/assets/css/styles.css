@@ -2154,3 +2154,7 @@ h1, h2, h3, blockquote, .faq-list summary {
 .header-cta { font-size: 12px; }
 @media (max-width: 1200px) { .brand-logo--header { width: 155px; } }
 @media (max-width: 767px) { .brand-logo--header { width: 135px; } }
+
+/* Sem imagem anterior durante o carregamento dos vídeos dos heróis. */
+.hero,
+.page-hero { background: var(--green-dark); }
