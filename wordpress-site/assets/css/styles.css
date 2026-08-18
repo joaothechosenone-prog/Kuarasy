@@ -2122,3 +2122,23 @@ h1, h2, h3, blockquote, .faq-list summary {
     top: -14px;
   }
 }
+
+/* Refinos finais: acomodações, Mhares e Eventos */
+.rooms-section--panoramic .room-panorama-image {
+  width: min(94%, 1180px);
+  height: clamp(340px, 38vw, 520px);
+  margin-inline: auto;
+}
+.wide-story--video .wide-story-card {
+  background: rgba(255, 255, 255, .82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.events-intro { padding-bottom: 180px; }
+.event-story { padding: 0 0 180px; border-top: 0; }
+.event-story + .cta-section { padding-top: 0; border-top: 0; }
+@media (max-width: 767px) {
+  .rooms-section--panoramic .room-panorama-image { width: 100%; height: 68vw; min-height: 270px; }
+  .events-intro { padding-bottom: 100px; }
+  .event-story { padding-bottom: 100px; }
+}
