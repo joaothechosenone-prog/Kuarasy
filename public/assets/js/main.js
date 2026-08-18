@@ -108,7 +108,7 @@
     const dots = carousel.querySelector("[data-coverflow-dots]");
     if (!stage || !cards.length) return;
 
-    let active = 2;
+    let active = Math.floor(cards.length / 2);
     let dragStart = null;
 
     cards.forEach((card, index) => {
