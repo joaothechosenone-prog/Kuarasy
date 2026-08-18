@@ -17,7 +17,7 @@ export function Motion() {
           opacity: 1,
           duration: 1.15,
           ease: "power3.out",
-          scrollTrigger: { trigger: element, start: "top 86%", once: true },
+          scrollTrigger: { trigger: element, start: "top 86%", end: "bottom 12%", toggleActions: "play reverse play reverse" },
         });
       });
 
@@ -45,4 +45,3 @@ export function Motion() {
 
   return null;
 }
-

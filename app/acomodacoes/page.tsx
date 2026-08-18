@@ -25,11 +25,11 @@ const amenities = [
 
 export default function RoomsPage() {
   return <main><Motion />
-    <PageHero eyebrow="Acomodações" title="Cada acomodação, um convite ao descanso" subtitle="14 acomodações para até duas pessoas, pensadas para unir conforto e a beleza natural de Japaratinga." image="/media/bungalow-interior.jpeg" />
-    <section className="rooms-section section-shell">
-      {rooms.map((room, index) => <article className={`room-feature ${index % 2 ? "room-feature--reverse" : ""}`} key={room.title}>
-        <div className="room-image"><img src={room.image} alt="" data-parallax /></div>
-        <div className="room-copy" data-reveal><span className="room-number">{room.number}</span><p className="eyebrow">Acomodações</p><h2>{room.title}</h2><p>{room.copy}</p></div>
+    <PageHero eyebrow="Acomodações" title="Cada acomodação, um convite ao descanso" subtitle="14 acomodações para até duas pessoas, pensadas para unir conforto e a beleza natural de Japaratinga." image="/media/bungalow-interior.jpeg" images={["/media/bungalow-interior.jpeg", "/media/bungalow-hammock.jpeg", "/media/bungalows-aerial.jpeg"]} />
+    <section className="rooms-section rooms-section--panoramic section-shell">
+      {rooms.map((room) => <article className="room-panorama" key={room.title}>
+        <div className="room-panorama-image" data-image-reveal><img src={room.image} alt="" /></div>
+        <div className="room-panorama-copy" data-reveal><p className="eyebrow">Acomodações</p><h2>{room.title}</h2><p>{room.copy}</p></div>
       </article>)}
     </section>
     <section className="amenities amenities--gallery"><div className="section-shell"><div className="section-heading" data-reveal><p className="eyebrow">Conforto em todos os detalhes</p><h2>O que você encontra em cada acomodação</h2></div><div className="amenities-grid">{amenities.map((item) => <article className="amenity-card" key={item.title} data-reveal><img src={item.image} alt="" /><h3>{item.title}</h3></article>)}</div></div></section>

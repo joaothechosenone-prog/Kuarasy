@@ -16,7 +16,7 @@ const services = [
 
 export default function ServicesPage() {
   return <main><Motion />
-    <PageHero eyebrow="Serviços" title="Cuidamos dos detalhes para você não se preocupar com nada" subtitle="Da chegada à partida, tudo pensado para que sua única tarefa seja aproveitar." image="/media/entrance-night.jpeg" />
+    <PageHero eyebrow="Serviços" title="Cuidamos dos detalhes para você não se preocupar com nada" subtitle="Da chegada à partida, tudo pensado para que sua única tarefa seja aproveitar." image="/media/entrance-night.jpeg" images={["/media/entrance-night.jpeg", "/media/bungalows-aerial.jpeg", "/media/pool-ocean.jpeg"]} />
     <section className="listing-section section-shell">
       <div className="section-heading" data-reveal><p className="eyebrow">Ao seu dispor</p><h2>Conforto que se revela nos detalhes</h2></div>
       <div className="service-list">{services.map(([number, title, copy]) => <article className="service-row" key={number} data-reveal><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
@@ -25,4 +25,3 @@ export default function ServicesPage() {
     <Footer />
   </main>;
 }
-

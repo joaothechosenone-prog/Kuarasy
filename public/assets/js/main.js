@@ -141,11 +141,12 @@
     const updateCoverflow = () => {
       const cardWidth = cards[0].getBoundingClientRect().width || 220;
       const stageWidth = stage.getBoundingClientRect().width || window.innerWidth;
-      const pitch = Math.min(cardWidth * .82, stageWidth / 6.4);
+      const visibleDepth = stageWidth >= 1500 ? 5 : stageWidth >= 700 ? 4 : 2;
+      const pitch = Math.max(cardWidth * .46, (stageWidth / 2 - cardWidth * .28) / visibleDepth);
       cards.forEach((card, index) => {
         const offset = circularOffset(index);
         const distance = Math.abs(offset);
-        const visible = distance <= 4;
+        const visible = distance <= visibleDepth;
         const tilt = Math.min(distance * 16, 52) * -Math.sign(offset);
         card.style.transform = `translateX(calc(-50% + ${offset * pitch}px)) translateZ(${-distance * 46}px) rotateY(${tilt}deg) scale(${1 - Math.min(distance * .035, .14)})`;
         card.style.opacity = visible ? String(Math.max(.72, 1 - distance * .08)) : "0";
@@ -189,12 +190,23 @@
     updateCoverflow();
   });
 
+  document.querySelectorAll("[data-hero-slideshow]").forEach((hero) => {
+    const slides = [...hero.querySelectorAll(".hero-slide")];
+    if (slides.length < 2) return;
+    let active = 0;
+    window.setInterval(() => {
+      slides[active].classList.remove("is-active");
+      active = (active + 1) % slides.length;
+      slides[active].classList.add("is-active");
+    }, 5200);
+  });
+
   if (window.gsap && window.ScrollTrigger && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.utils.toArray("[data-reveal]").forEach((element) => {
       gsap.fromTo(element, { y: 46, opacity: 0 }, {
         y: 0, opacity: 1, duration: 1.15, ease: "power3.out",
-        scrollTrigger: { trigger: element, start: "top 86%", once: true },
+        scrollTrigger: { trigger: element, start: "top 86%", end: "bottom 12%", toggleActions: "play reverse play reverse" },
       });
     });
     gsap.utils.toArray("[data-parallax]").forEach((element) => {
@@ -212,7 +224,7 @@
         scale: 1,
         duration: 1.35,
         ease: "power3.out",
-        scrollTrigger: { trigger: element, start: "top 88%", once: true },
+        scrollTrigger: { trigger: element, start: "top 88%", end: "bottom 10%", toggleActions: "play reverse play reverse" },
       });
     });
     gsap.utils.toArray(".experience-card").forEach((card, index) => {
