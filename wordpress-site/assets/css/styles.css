@@ -2114,6 +2114,7 @@ h1, h2, h3, blockquote, .faq-list summary {
 .page-hero-content {
   position: relative;
   top: 4px;
+  margin-top: 150px !important;
 }
 
 @media (max-width: 767px) {

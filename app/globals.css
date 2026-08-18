@@ -398,5 +398,5 @@ h1, h2, h3, blockquote, .faq-list summary {
 .hero-shade, .page-hero-shade, .page-hero--strong-shade .page-hero-shade { background: linear-gradient(180deg, rgba(3,25,22,.56), rgba(3,25,22,.44) 52%, rgba(3,25,22,.60)); }
 
 /* Compensa a faixa ocupada pelo header fixo nos heróis. */
-.hero-content, .page-hero-content { position: relative; top: 4px; }
+.hero-content, .page-hero-content { position: relative; top: 4px; margin-top: 150px !important; }
 @media (max-width: 767px) { .hero-content, .page-hero-content { top: -14px; } }
