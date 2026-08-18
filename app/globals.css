@@ -390,3 +390,9 @@ h1, h2, h3, blockquote, .faq-list summary {
   .wide-story--video .wide-story-card { width: calc(100% - 36px); margin: auto; }
   .events-intro li .event-icon { flex-basis: 46px; width: 46px; height: 46px; font-size: 23px; }
 }
+
+/* Heróis — posição e contraste consistentes em todas as páginas */
+.hero, .page-hero { display: flex; align-items: center; justify-content: center; }
+.hero-content, .page-hero-content, .page-hero--left .page-hero-content { width: min(1050px, calc(100% - 48px)); margin: 0 auto !important; text-align: center !important; }
+.hero-copy, .page-hero-content > p:last-child, .page-hero--left .page-hero-content > p:last-child { margin-left: auto; margin-right: auto; }
+.hero-shade, .page-hero-shade, .page-hero--strong-shade .page-hero-shade { background: linear-gradient(180deg, rgba(3,25,22,.56), rgba(3,25,22,.44) 52%, rgba(3,25,22,.60)); }
