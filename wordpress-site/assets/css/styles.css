@@ -1840,3 +1840,22 @@ h3,
 @media (prefers-reduced-motion: reduce) {
   .coverflow-card { transition-duration: .01ms; }
 }
+
+/* Carrossel de depoimentos em largura total */
+.testimonial-coverflow {
+  width: 100vw;
+  max-width: none;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+.coverflow-stage {
+  width: 100%;
+  height: clamp(360px, 36vw, 470px);
+}
+.coverflow-controls {
+  margin-top: 6px;
+}
+
+@media (max-width: 767px) {
+  .coverflow-stage { height: 330px; }
+}
