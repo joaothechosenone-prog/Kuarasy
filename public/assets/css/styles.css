@@ -2147,3 +2147,10 @@ h1, h2, h3, blockquote, .faq-list summary {
 .desktop-nav,
 .header-cta { font-size: 14px; }
 .header-cta { font-family: inherit; cursor: default; }
+
+/* Compactação final do header. */
+.brand-logo--header { width: 170px; }
+.desktop-nav,
+.header-cta { font-size: 12px; }
+@media (max-width: 1200px) { .brand-logo--header { width: 155px; } }
+@media (max-width: 767px) { .brand-logo--header { width: 135px; } }

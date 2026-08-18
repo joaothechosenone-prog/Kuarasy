@@ -43,7 +43,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
           <Link className={pathname === href ? "is-active" : ""} href={href} key={href}>{label}</Link>
         ))}
       </nav>
-      <button className="header-cta desktop-book" type="button">Agendar minha reserva</button>
+      <button className="header-cta desktop-book" type="button">Agendar agora</button>
       <button className="menu-toggle" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Fechar menu" : "Abrir menu"}>
         <span /><span />
       </button>

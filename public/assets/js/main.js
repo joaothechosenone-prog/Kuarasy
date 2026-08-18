@@ -17,7 +17,7 @@
         <nav class="desktop-nav" aria-label="Navegação principal">
           ${links.map(([href, label]) => `<a href="${href}"${href === "/" ? (location.pathname === "/" || location.pathname === "/site-pages/" ? ' class="is-active"' : "") : (location.pathname.startsWith(href) ? ' class="is-active"' : "")}>${label}</a>`).join("")}
         </nav>
-        <button class="header-cta desktop-book" type="button">Agendar minha reserva</button>
+        <button class="header-cta desktop-book" type="button">Agendar agora</button>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span><span></span></button>
         <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
           <nav aria-label="Navegação móvel">
