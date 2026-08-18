@@ -10,7 +10,7 @@ const types = [["/media/event-casamento.svg", "Casamentos"], ["/media/event-aniv
 
 export default function EventsPage() {
   return <main><Motion />
-    <PageHero eyebrow="Eventos" title="Celebrações inesquecíveis à beira-mar" subtitle="Casamentos, réveillons e momentos especiais em um dos cenários mais encantadores do litoral alagoano." image="/media/wedding.jpeg" images={["/media/wedding.jpeg", "/media/sunset-palms.jpeg", "/media/beach-sunset.jpeg"]} />
+    <PageHero eyebrow="Eventos" title="Celebrações inesquecíveis à beira-mar" subtitle="Casamentos, réveillons e momentos especiais em um dos cenários mais encantadores do litoral alagoano." image="/media/wedding.jpeg" video="/media/hero-eventos.webm" />
     <section className="events-intro section-shell">
       <div data-reveal><p className="eyebrow">Até 120 pessoas</p><h2>Cada celebração merece o cenário certo</h2><p>Entre convidados e equipe de apoio, a Kuarasy recebe celebrações cercadas pelo mar e pela natureza de Japaratinga.</p></div>
       <ol>{types.map(([icon, type]) => <li key={type} data-reveal><span className="event-icon" aria-hidden="true"><img src={icon} alt="" /></span>{type}</li>)}</ol>

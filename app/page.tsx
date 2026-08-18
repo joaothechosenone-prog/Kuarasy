@@ -16,7 +16,7 @@ export default function Home() {
       <Header overlay />
       <section className="hero" aria-labelledby="hero-title">
         <video className="hero-media" autoPlay muted loop playsInline poster="/media/pool-ocean.jpeg">
-          <source src="/media/kuarasy-hero.mp4" type="video/mp4" />
+          <source src="/media/hero-inicio.webm" type="video/webm" />
         </video>
         <div className="hero-shade" />
         <div className="hero-content" data-reveal>

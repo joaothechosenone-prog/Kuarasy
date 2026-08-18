@@ -25,7 +25,7 @@ const amenities = [
 
 export default function RoomsPage() {
   return <main><Motion />
-    <PageHero eyebrow="Acomodações" title="Cada acomodação, um convite ao descanso" subtitle="14 acomodações para até duas pessoas, pensadas para unir conforto e a beleza natural de Japaratinga." image="/media/bungalow-interior.jpeg" images={["/media/bungalow-interior.jpeg", "/media/bungalow-hammock.jpeg", "/media/bungalows-aerial.jpeg"]} />
+    <PageHero eyebrow="Acomodações" title="Cada acomodação, um convite ao descanso" subtitle="14 acomodações para até duas pessoas, pensadas para unir conforto e a beleza natural de Japaratinga." image="/media/bungalow-interior.jpeg" video="/media/hero-acomodacoes.webm" />
     <section className="rooms-section rooms-section--panoramic section-shell">
       {rooms.map((room) => <article className="room-panorama" key={room.title}>
         <div className="room-panorama-image" data-image-reveal><img src={room.image} alt="" /></div>
