@@ -2530,3 +2530,40 @@ h1, h2, h3, blockquote, .faq-list summary {
 @media (max-width: 767px) {
   .cta-section > .cta-disclaimer { max-width: 310px; margin-top: 12px !important; font-size: 9px !important; }
 }
+
+/* Acomodações — ritmo final e lista textual sem ícones */
+.rooms-section--panoramic { padding-bottom: 0; }
+.amenities--editorial {
+  margin-top: 180px;
+  margin-bottom: 180px;
+  padding-block: 0;
+}
+.amenities--editorial + .cta-section { padding-top: 0; }
+.amenities-editorial-layout { align-items: start; }
+.amenities-editorial-image { height: 560px; }
+.amenities-editorial-content .section-heading { margin-bottom: 24px; }
+.amenities-icon-list { display: block; }
+.amenities-icon-list li {
+  display: block;
+  min-height: 0;
+  padding: 8px 0;
+  color: var(--green);
+  font-size: 18px !important;
+  line-height: 1.35;
+}
+.amenity-icon { display: none; }
+
+@media (max-width: 767px) {
+  .rooms-section--panoramic { padding-bottom: 0 !important; }
+  .amenities--editorial {
+    margin-top: 110px !important;
+    margin-bottom: 0;
+    padding-block: 0 !important;
+  }
+  .amenities--editorial + .cta-section {
+    margin-top: 110px !important;
+    padding-top: 0 !important;
+  }
+  .amenities-editorial-image { height: 112vw; min-height: 390px; max-height: 520px; }
+  .amenities-icon-list li { padding: 7px 0; }
+}

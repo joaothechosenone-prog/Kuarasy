@@ -12,15 +12,15 @@ const rooms = [
   { number: "08", title: "Apartamentos", copy: "Quatro unidades no térreo com vista para o jardim e quatro no primeiro andar com vista para o mar. Ambientes amplos, serenos e cuidadosamente decorados.", image: "/media/bungalow-interior.jpeg" },
 ];
 const amenities = [
-  ["☼", "Varanda privativa com rede e mobiliário"],
-  ["❄", "Ar-condicionado"],
-  ["▣", "Smart TV"],
-  ["♨", "Cafeteira elétrica"],
-  ["▤", "Frigobar"],
-  ["◇", "Cofre eletrônico"],
-  ["☎", "Ramal telefônico"],
-  ["≋", "Secador de cabelo"],
-  ["⌁", "Wi-Fi gratuito"],
+  "Varanda privativa com rede e mobiliário",
+  "Ar-condicionado",
+  "Smart TV",
+  "Cafeteira elétrica",
+  "Frigobar",
+  "Cofre eletrônico",
+  "Ramal telefônico",
+  "Secador de cabelo",
+  "Wi-Fi gratuito",
 ];
 
 export default function RoomsPage() {
@@ -32,7 +32,7 @@ export default function RoomsPage() {
         <div className="room-panorama-copy" data-reveal><p className="eyebrow">Acomodações</p><h2>{room.title}</h2><p>{room.copy}</p></div>
       </article>)}
     </section>
-    <section className="amenities amenities--editorial"><div className="section-shell amenities-editorial-layout"><div className="amenities-editorial-image" data-image-reveal><img src="/media/bungalow-interior.jpeg" alt="Interior de uma acomodação da Pousada Kuarasy" data-parallax /></div><div className="amenities-editorial-content"><div className="section-heading" data-reveal><p className="eyebrow">Conforto em todos os detalhes</p><h2>O que você encontra em cada acomodação</h2></div><ul className="amenities-icon-list">{amenities.map(([icon, label]) => <li key={label} data-reveal><span className="amenity-icon" aria-hidden="true">{icon}</span><span>{label}</span></li>)}</ul></div></div></section>
+    <section className="amenities amenities--editorial"><div className="section-shell amenities-editorial-layout"><div className="amenities-editorial-image" data-image-reveal><img src="/media/bungalow-interior.jpeg" alt="Interior de uma acomodação da Pousada Kuarasy" data-parallax /></div><div className="amenities-editorial-content"><div className="section-heading" data-reveal><p className="eyebrow">Conforto em todos os detalhes</p><h2>O que você encontra em cada acomodação</h2></div><ul className="amenities-icon-list">{amenities.map((label) => <li key={label} data-reveal>{label}</li>)}</ul></div></div></section>
     <CTA title="Escolha a acomodação perfeita para a sua estadia" subtitle="Vagas limitadas durante a alta temporada em Japaratinga." label="Quero reservar agora" />
     <Footer />
   </main>;
