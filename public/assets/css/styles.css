@@ -2158,3 +2158,220 @@ h1, h2, h3, blockquote, .faq-list summary {
 /* Sem imagem anterior durante o carregamento dos vídeos dos heróis. */
 .hero,
 .page-hero { background: var(--green-dark); }
+
+/* Revisão mobile consolidada — agosto/2026 */
+@media (max-width: 767px) {
+  /* Escala tipográfica delicada e consistente */
+  h1,
+  h2,
+  h3,
+  blockquote,
+  .faq-list summary,
+  .hero-content h1,
+  .page-hero-content h1,
+  .home-page .editorial-home-title,
+  .home-page .testimonials-section > h2,
+  .amenity-card h3,
+  .room-panorama-copy h2,
+  .events-intro li {
+    font-size: 24px !important;
+    line-height: 1.2;
+  }
+  p,
+  .prose,
+  .editorial-home-text,
+  .editorial-home-intro,
+  .service-feature-copy,
+  .room-panorama-copy,
+  .contact-details {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .eyebrow,
+  .button,
+  .section-header-button,
+  .contact-form label,
+  .footer,
+  .mobile-menu-meta { font-size: 14px; }
+
+  /* Heróis 100 px mais baixos no mobile */
+  .hero,
+  .page-hero {
+    width: 100%;
+    height: calc(100svh - 100px);
+    min-height: 580px;
+    max-height: 700px;
+  }
+  .hero-content,
+  .page-hero-content,
+  .page-hero--left .page-hero-content {
+    width: calc(100% - 40px);
+    top: 0;
+    margin: 75px auto 0 !important;
+  }
+  .hero-copy,
+  .page-hero-content > p:last-child {
+    max-width: 340px;
+    margin-top: 18px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .hero-content .button { margin-top: 26px; }
+
+  /* Menu móvel: painel legível, sem sobreposição com o herói */
+  .site-header.is-menu-open {
+    color: white;
+    background: var(--green-dark);
+    border-color: rgba(255, 255, 255, .14);
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+  .site-header.is-menu-open .brand-logo--header { filter: brightness(0) invert(1); }
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 104px 28px 34px;
+    overflow-y: auto;
+  }
+  .mobile-menu nav {
+    width: 100%;
+    gap: 8px;
+  }
+  .mobile-menu nav a {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+    font-family: var(--font-sans);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: .01em;
+  }
+  .mobile-menu-meta {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 7px;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 20px;
+    line-height: 1.45;
+  }
+  .site-header.is-menu-open .brand-logo--header { width: 118px; }
+
+  /* Ritmo vertical: 110 px entre os blocos principais */
+  main > section:not(.hero):not(.page-hero) { margin-top: 110px !important; }
+  .home-page .editorial-home,
+  .home-page .testimonials-section,
+  .rooms-section--panoramic,
+  .amenities,
+  .services-showcase,
+  .mhares-editorial,
+  .events-intro,
+  .event-story,
+  .contact-hero,
+  .contact-form-wrap,
+  .cta-section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .cta-section { margin-bottom: 110px !important; }
+
+  /* Home — imagens primeiro e texto depois na seção 2 */
+  .home-page .editorial-home--story {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .home-page .editorial-story-left,
+  .home-page .editorial-story-right { display: contents; }
+  .home-page .editorial-home--story .editorial-home-small {
+    order: 1;
+    width: 50%;
+    max-width: 180px;
+    height: 235px;
+    margin: 0;
+    transform: none;
+  }
+  .home-page .editorial-home--story .editorial-home-main {
+    order: 2;
+    width: 100%;
+    height: 300px;
+    margin: 0;
+  }
+  .home-page .editorial-home--story .editorial-home-title { order: 3; margin: 6px 0 0; }
+  .home-page .editorial-home--story .editorial-home-intro {
+    order: 4;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+  .home-page .editorial-home--story .editorial-home-text {
+    order: 5;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Home — previews editoriais com imagem acima do conteúdo */
+  .home-page .editorial-home--accommodations,
+  .home-page .editorial-home--mhares {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 0;
+  }
+  .home-page .editorial-home--accommodations .editorial-home-main,
+  .home-page .editorial-home--mhares .editorial-home-main {
+    order: 1;
+    width: 100%;
+    height: 330px;
+  }
+  .home-page .editorial-home--accommodations .editorial-home-side,
+  .home-page .editorial-home--mhares .editorial-home-side { order: 2; }
+  .home-page .editorial-home-side .editorial-home-title {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .home-page .editorial-home-side .editorial-home-text { margin-top: 18px; }
+
+  /* Controles do coverflow perfeitamente centralizados */
+  .coverflow-controls > button {
+    display: inline-grid;
+    place-items: center;
+    padding: 0;
+    line-height: 1;
+  }
+  .coverflow-controls > button:first-child { padding-bottom: 2px; }
+  .coverflow-controls > button:last-child { padding-bottom: 2px; }
+
+  /* Mhares — composição fotográfica antes do texto */
+  .mhares-editorial { display: flex; flex-direction: column; gap: 36px; }
+  .mhares-photo-pair { order: -1; width: 100%; min-height: 470px; }
+
+  /* Eventos — aproxima título, subtítulo e pictogramas */
+  .events-intro { gap: 30px; }
+  .events-intro > div > p:last-child { margin-top: 20px; }
+  .events-intro ol { margin-top: 10px; }
+
+  /* Contato — formulário, dados e FAQ */
+  main:has(.contact-form-wrap) { display: flex; flex-direction: column; }
+  main:has(.contact-form-wrap) > .contact-form-wrap { order: 1; }
+  main:has(.contact-form-wrap) > .contact-hero { order: 2; }
+  main:has(.contact-form-wrap) > .faq-section { order: 3; }
+  main:has(.contact-form-wrap) > .footer { order: 4; }
+  .contact-form-wrap { width: calc(100% - 36px); }
+  .contact-hero { gap: 36px; }
+  .faq-section { padding-block: 70px !important; }
+}
+
+/* Remove somente as linhas usadas como divisores decorativos de seção. */
+.cta-section,
+.event-story,
+.event-story + .cta-section,
+.home-page .editorial-home,
+.home-page .testimonials-section { border-top: 0 !important; }
+.home-page .editorial-home-side .editorial-home-title { border-bottom: 0; }

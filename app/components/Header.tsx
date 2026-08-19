@@ -33,7 +33,7 @@ export function Header({ overlay = false }: { overlay?: boolean }) {
   }, [open]);
 
   return (
-    <header className={`site-header ${overlay ? "site-header--overlay" : "site-header--solid"} ${hidden && !open ? "site-header--hidden" : ""}`}>
+    <header className={`site-header ${overlay ? "site-header--overlay" : "site-header--solid"} ${hidden && !open ? "site-header--hidden" : ""} ${open ? "is-menu-open" : ""}`}>
       <Link className="wordmark" href="/" aria-label="Pousada Kuarasy - início">
         <small>Pousada</small>
         <strong>Kuarasy</strong>
