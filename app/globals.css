@@ -605,3 +605,18 @@ h1, h2, h3, blockquote, .faq-list summary {
   .amenities-icon-list li { grid-template-columns: 48px 1fr; gap: 15px; min-height: 54px; font-size: 15px; }
   .amenity-icon { width: 48px; height: 48px; font-size: 21px; }
 }
+
+/* Refinamento visual da lista de comodidades */
+.amenities--editorial { background: var(--white); }
+.amenities-editorial-content,
+.amenities-editorial-content .section-heading,
+.amenities-editorial-content .eyebrow,
+.amenities-editorial-content h2,
+.amenities-icon-list { text-align: left; }
+.amenities-editorial-content .section-heading { max-width: none; margin-right: 0; margin-left: 0; }
+.amenities-icon-list li,
+.amenities-icon-list li > span:last-child { color: var(--green); font-size: 18px !important; line-height: 1.35; text-align: left; }
+
+/* Aviso discreto presente em todos os CTAs */
+.cta-section > .cta-disclaimer { max-width: 620px; margin: 14px auto 0 !important; color: var(--ink-soft); font-size: 10px !important; font-weight: 400; line-height: 1.45; letter-spacing: .01em; text-align: center; }
+@media (max-width: 767px) { .cta-section > .cta-disclaimer { max-width: 310px; margin-top: 12px !important; font-size: 9px !important; } }

@@ -82,6 +82,16 @@
     if (note) note.hidden = false;
   });
 
+  document.querySelectorAll(".cta-section").forEach((cta) => {
+    if (cta.querySelector(".cta-disclaimer")) return;
+    const button = cta.querySelector(".button");
+    if (!button) return;
+    const disclaimer = document.createElement("p");
+    disclaimer.className = "cta-disclaimer";
+    disclaimer.textContent = "Pessoas com restrições devem mencionar as necessidades no ato da reserva!";
+    button.insertAdjacentElement("afterend", disclaimer);
+  });
+
   document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     const track = carousel.querySelector(".testimonial-track");
     const slides = [...carousel.querySelectorAll(".testimonial-slide")];
